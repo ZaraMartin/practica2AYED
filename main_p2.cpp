@@ -69,5 +69,11 @@ int main()
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();
 
+  // modificación 
+  // vector_t<int> E;
+  // matrix_t<int> D;
+  A.escalera(v);
+  cout << "escalera en matrices: " << endl;
+  A.write();
   return 0;
 }

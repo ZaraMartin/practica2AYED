@@ -40,6 +40,7 @@ public:
 
   // operaciones y operadores
   void multiply(const matrix_t<T>&, const matrix_t<T>&);
+  void escalera(const vector_t<T>&);
 
   void write(ostream & = cout) const;
   void read(istream & = cin);
@@ -206,3 +207,36 @@ matrix_t<T>::multiply(const matrix_t<T>& A, const matrix_t<T>& B)
     }
   }
 }
+
+// modificación 
+
+template<class T>
+void
+matrix_t<T>::escalera(const vector_t<T>& A)
+{
+  int filas = this->get_m();
+  int columnas = this->get_n();
+  this->resize(4, 4);
+
+  for (int i{ 1 }; i <= filas; i++) {
+    for (int j{ 1 }; j <= columnas; j++) {
+      for (int k{ 0 }; k <= A.get_size() - 1; k++) {
+        this->at(i, j) = A[k];
+       }
+    }
+  }
+}
+
+// template<class T>
+// void
+// matrix_t<T>::escalera(const vector_t<T>& A)
+// {
+//   this->resize(4, 4);
+//   for(int i{ 1 }; i <= this->at(1, 2); i++){
+//     for (int j { 1 }; j < this->at(2, 2); j++){
+//       for(int k { 0 }; k < A.get_size(); k++){
+//         this->at(i, j) = A[k];
+//       }
+//     }
+//   }
+// }
